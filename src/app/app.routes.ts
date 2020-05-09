@@ -4,10 +4,12 @@ import { ListaLibrosComponent } from './component/lista-libros/lista-libros.comp
 import { PeliculasComponent } from './component/peliculas/peliculas.component';
 import { BuscadorComponent } from './component/buscador/buscador.component';
 import { LoginComponent } from './component/login/login.component';
+import { RegistroComponent } from './component/registro/registro.component';
 
 
 const APP_ROUTES: Routes = [
     { path: 'login', component: LoginComponent},
+    { path: 'registro', component: RegistroComponent },
     { path: 'listaLibros', component: ListaLibrosComponent},
     { path: 'peliculas', component: PeliculasComponent },
     { path: 'buscar/:libro', component: BuscadorComponent },

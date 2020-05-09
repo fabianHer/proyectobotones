@@ -11,6 +11,7 @@ import { PeliculasComponent } from './component/peliculas/peliculas.component';
 import { LibrosService } from './servicios/libros.service';
 import { BuscadorComponent } from './component/buscador/buscador.component';
 import { LoginComponent } from './component/login/login.component';
+import { RegistroComponent } from './component/registro/registro.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { LoginComponent } from './component/login/login.component';
     ListaLibrosComponent,
     PeliculasComponent,
     BuscadorComponent,
-    LoginComponent
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
