@@ -5,13 +5,14 @@ import { PeliculasComponent } from './component/peliculas/peliculas.component';
 import { BuscadorComponent } from './component/buscador/buscador.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegistroComponent } from './component/registro/registro.component';
+import { LoginGuardGuard } from '../app/guards/login-guard.guard';
 
 
 const APP_ROUTES: Routes = [
     { path: 'login', component: LoginComponent},
     { path: 'registro', component: RegistroComponent },
     { path: 'listaLibros', component: ListaLibrosComponent},
-    { path: 'peliculas', component: PeliculasComponent },
+    { path: 'peliculas', component: PeliculasComponent, canActivate: [LoginGuardGuard] },
     { path: 'buscar/:libro', component: BuscadorComponent },
     { path: 'header', component: HeaderComponent },
     { path: '**' , pathMatch: 'full', redirectTo: 'login'}
