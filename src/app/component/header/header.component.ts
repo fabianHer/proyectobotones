@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../../servicios/login.service';
+
 
 @Component({
   selector: 'app-header',
@@ -14,7 +16,7 @@ export class HeaderComponent  {
 
  @Input() placeholderPadre = '';
 
- constructor( private router: Router ) { }
+ constructor( private router: Router, private loginService: LoginService ) { }
  buscarLibro( termino: string ) {
   console.log(termino);
   this.router.navigate( ['/buscar', termino]);
@@ -22,6 +24,10 @@ export class HeaderComponent  {
 procesarTraerPlaceHolder(event) {
   console.log(event);
 
+}
+salir(){
+ this.loginService.logout();
+ this.router.navigateByUrl('/login');
 }
 
 }

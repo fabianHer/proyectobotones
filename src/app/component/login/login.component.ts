@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   usuario: UsuarioModel = new UsuarioModel();
-  recordarme: false;
+  recordarme: boolean = false;
   constructor(private userLogin: LoginService, private route: Router ) { }
 
   ngOnInit() {
@@ -31,7 +31,9 @@ export class LoginComponent implements OnInit {
   Swal.showLoading();
   this.userLogin.login( this.usuario).subscribe(respuesta => {
   Swal.close();
-  console.log(respuesta);
+  if(this.recordarme){
+    localStorage.setItem('email', this.usuario.email);
+  }
   this.route.navigateByUrl('/peliculas');
   }, (err) => {
     Swal.fire({
