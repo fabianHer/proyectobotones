@@ -115,6 +115,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "proyectobotones"
+    }
+  },
+  "defaultProject": "proyectobotones",
+  "cli": {
+    "analytics": false
+  }
 }
