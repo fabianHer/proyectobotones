@@ -88,6 +88,7 @@ export class LibrosService {
           heroesArr.push( heroe );
       }
     }
+    console.log(heroesArr);
   return heroesArr;
   }
 }

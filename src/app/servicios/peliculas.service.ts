@@ -54,6 +54,24 @@ export class PeliculasService {
  getpeliculas() {
     return this.peliculas;
   }
+  buscarPeliculas( termino: string ): Pelicula[] {
+   console.log(termino);
+    let heroesArr: Pelicula[] = [];
+    termino = termino.toLowerCase();
+
+    for (let i = 0; i < this.peliculas.length; i ++ ) {
+
+      let heroe = this.peliculas[i];
+      let nombre = heroe.titulo.toLowerCase();
+
+      if (nombre.indexOf( termino ) >= 0 ) {
+          heroe.idx = i;
+          heroesArr.push( heroe );
+      }
+    }
+    console.log(heroesArr);
+  return heroesArr;
+  }
 }
 export class Pelicula {
   id: string;
@@ -61,4 +79,5 @@ export class Pelicula {
   descripcion: string;
   publicacion: string;
   tipo: string;
+  idx?: number;
 }

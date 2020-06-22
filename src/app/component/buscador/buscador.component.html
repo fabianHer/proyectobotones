@@ -1,5 +1,8 @@
-<app-header></app-header>
+<app-header [placeholder]="placeholder" [tipoBusqueda]="tipoBusqueda"></app-header>
 <p>buscador works!</p>
-  <tr *ngFor="let l of libros">
-      <h1>{{l.nombre}}</h1><br>
-  </tr>
+<tr *ngFor="let l of libros">
+    <h1>{{l.nombre}}</h1><br>
+</tr>
+<tr *ngFor="let l of peliculas">
+    <h1>{{l.titulo}}</h1><br>
+</tr>

@@ -13,7 +13,7 @@ const APP_ROUTES: Routes = [
     { path: 'registro', component: RegistroComponent },
     { path: 'listaLibros', component: ListaLibrosComponent, canActivate: [LoginGuardGuard] },
     { path: 'peliculas', component: PeliculasComponent, canActivate: [LoginGuardGuard] },
-    { path: 'buscar/:libro', component: BuscadorComponent },
+    { path: 'buscar/:parametroBuscar/:tipoBusqueda', component: BuscadorComponent },
     { path: 'header', component: HeaderComponent },
     { path: '**' , pathMatch: 'full', redirectTo: 'login'}
 ];

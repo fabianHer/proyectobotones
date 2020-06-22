@@ -5,20 +5,45 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-primary" role="button" data-toggle="dropdown" aria-haspopup="true">
+                  Peliculas
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-primary" [routerLink]="['/peliculas']">{{ peliculas }}</a>
+                    <a class="dropdown-item text-primary" href="#">Crear Pelicula</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-primary" href="#">En Desarrollo</a>
+                </div>
+            </li>
+            <!--<li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['/peliculas']">{{ peliculas }}</a>
             </li>
-            <li class="nav-item">
+
+            <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['/listaLibros']">{{ listarLibros }}</a>
+            </li>-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-primary" role="button" data-toggle="dropdown" aria-haspopup="true">
+                  Libros
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-primary" [routerLink]="['/listaLibros']">{{ listarLibros }}</a>
+                    <a class="dropdown-item text-primary" href="#">Crear Libro</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-primary" href="#">En Desarrollo</a>
+                </div>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" (click)="salir()">Cerrar Sesión</a>
+                <a class="nav-link text-danger" (click)="salir()">Cerrar Sesión</a>
             </li>
         </ul>
         <div class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="{{placeholderPadre}}" (keyup.enter)="buscarLibro(buscarTexto.value)" #buscarTexto>
-            <button (click)="buscarLibro(buscarTexto.value)" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            <input class="form-control mr-sm-2" type="search" placeholder="{{ placeholder }}" (keyup.enter)="buscarElemento(buscarTexto.value, tipoBusqueda)" #buscarTexto>
+            <button (click)="buscarElemento(buscarTexto.value, tipoBusqueda)" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
         </div>
     </div>
 </nav>

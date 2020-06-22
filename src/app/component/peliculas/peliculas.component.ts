@@ -8,12 +8,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./peliculas.component.css']
 })
 export class PeliculasComponent implements OnInit {
-  placeHolder = 'Bucar Peliculas';
+  tipoBusqueda="pelicula";
+  placeholder="Buscar Peliculas";
   peliculas: Pelicula[] = [];
+  nombreValue = "";
+  descValue = "";
   constructor( private servicepelicula: PeliculasService, private activaruta: ActivatedRoute ) { }
 
   ngOnInit() {
     this.peliculas = this.servicepelicula.getpeliculas();
     console.log(this.peliculas);
+  }
+  comprar(event: any) {
+    console.log(event);
+    this.nombreValue = event.titulo;
+    this.descValue = event.descripcion;
   }
 }

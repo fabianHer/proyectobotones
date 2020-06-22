@@ -10,16 +10,18 @@ import { LoginService } from '../../servicios/login.service';
 })
 export class HeaderComponent  {
  title = 'Proyecto Botones';
+ crearPelicula = "Crear Pelicula"
  listarLibros = 'Lista Libros';
  peliculas = 'Lista Peliculas';
  placeHolder = 'Buscar';
 
- @Input() placeholderPadre = '';
+ @Input('placeholder') placeholder;
+ @Input('tipoBusqueda') tipoBusqueda;
 
  constructor( private router: Router, private loginService: LoginService ) { }
- buscarLibro( termino: string ) {
-  console.log(termino);
-  this.router.navigate( ['/buscar', termino]);
+ buscarElemento( termino: string, tipoBusqueda: any ) {
+  console.log(termino + tipoBusqueda);
+  this.router.navigate( ['/buscar', termino, tipoBusqueda]);
 }
 procesarTraerPlaceHolder(event) {
   console.log(event);

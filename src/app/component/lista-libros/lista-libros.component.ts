@@ -8,12 +8,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./lista-libros.component.css']
 })
 export class ListaLibrosComponent implements OnInit  {
+  tipoBusqueda="libro";
+  placeholder="Buscar Libros";
   libros: Heroe[] = [];
   valor = 'Fabian';
   inicio = 'dos';
   descValue = '';
   nombreValue = '';
-  placeHolder = 'Bucar Libros';
   constructor( private activatedRoute: ActivatedRoute, private traerLibros: LibrosService) {
     }
 
@@ -23,7 +24,6 @@ export class ListaLibrosComponent implements OnInit  {
 
     setTimeout(() => {
       this.valor = 'nuevo valor';
-      this.placeHolder = 'dos';
     }, 5000);
   }
 
